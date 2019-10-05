@@ -1,11 +1,24 @@
 #!-*- conding: utf8 -*-
-import random
 
-while True:
-    for x in range(1):
-        print random.randint(1,6)
+from random import randint
 
-    resp = raw_input("Voce quer ir de novo? s/n  ")
+n = randint(1,1000)
 
-    if resp == 'n':
-        break
+palpite = 0
+
+tentativa = 0
+
+while palpite != n:
+	palpite = int(input('digite seu palpite de 1 a 1000: '))
+	tentativa+=1
+	if n == palpite:
+		print('Parabens voce acertou. Seu numero de tentativas foi',tentativa)
+		break	
+	elif palpite < n:
+		print('Voce errou. Digite um valor maior')
+	else:
+		print('Voce errou. Digite um valor menor')
+print()
+print('='*25)
+print('FIM DO JOGO')
+print('='*25)
